@@ -12,7 +12,7 @@ function SingleMeteorite({ meteorite }) {
             </p>
 
             <p>
-                <span>Year discovered: </span> {new Date(meteorite.year).getFullYear()}
+                <span>Year discovered: </span> {year}
             </p>
 
             <p>
