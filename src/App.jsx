@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import getMeteoriteData from "../getMeteoriteData";
 import Header from "./components/Header";
-import MeteoritesList from "./components/MeteoritesList";
+import MeteoritesTable from "./components/MeteoritesTable";
 import Map from "./components/Map";
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
             <Header />
             <main>
                 {isLoading ? <p className="loading">Loading...</p> : <Map meteorites={meteorites} />}
-                {!isLoading ? <MeteoritesList meteorites={meteorites} /> : ""}
+                {!isLoading ? <MeteoritesTable meteorites={meteorites} /> : ""}
             </main>
         </div>
     );

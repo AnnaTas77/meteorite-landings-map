@@ -1,9 +1,9 @@
-body {
+body,
+html {
     margin: 0;
     padding: 0;
-    background-color: #153957;
+    height: 100vh;
     width: 100%;
-    height: 100%;
 }
 
 #root {
@@ -11,14 +11,12 @@ body {
     padding: 0;
     display: flex;
     text-align: center;
-    width: 100%;
-    height: 100%;
 }
 
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
-    color: #ef6262;
+    color: white;
 }
 
 .app-container {
@@ -27,6 +25,9 @@ h1 {
     align-items: center;
     width: 100%;
     height: 100%;
+    background: linear-gradient(315deg, #c061cb 0%, #1c71d8 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 main {
@@ -38,8 +39,8 @@ main {
 }
 
 .leaflet-container {
-    width: 90%;
-    min-height: 60vh;
+    width: 50%;
+    min-height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,45 +48,6 @@ main {
     border: 1px solid #41ffff88;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
         rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.search-container {
-    display: flex;
-    border: 1px solid blue;
-    padding: 15px;
-    margin-bottom: 25px;
-}
-
-.list-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 25px;
-}
-
-.meteorites-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    padding: 15px;
-    height: 300px;
-    margin: 0 25px 25px;
-}
-
-.meteorites-list-two {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    padding: 15px;
-    height: 300px;
-    margin: 0 25px 25px;
-    overflow: auto;
-}
-
-.list-title {
-    color: #ef6262;
 }
 
 .single-meteorite {
@@ -101,48 +63,57 @@ main {
     font-weight: normal;
 }
 
-.single-meteorite-two {
-    width: 100%;
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(12, 12, 71);
-    background-color: #b4ffff70;
-    border: 1px solid #41ffff88;
-    border-radius: 10px;
-    margin: 15px;
-}
-
-.single-meteorite-two span {
-    font-weight: normal;
-}
-
 .loading {
-    color: #ef6262;
+    color: white;
     font-size: 20px;
     font-weight: bold;
-    min-height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
 }
 
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #468b97;
-    cursor: pointer;
-    transition: border-color 0.25s;
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0 45px;
+    width: 60%;
 }
-button:hover {
-    border-color: #646cff;
+
+.table-title {
+    color: white;
 }
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+
+.table-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow-y: auto;
+}
+
+table {
+    border: none;
+    padding: 5px;
+    background-color: #f9f9f94d;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+
+thead {
+    background-color: #ffe7fa;
+    position: sticky;
+    top: 0;
+}
+
+tbody {
+}
+
+th,
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:hover {
+    background-color: #f9f9f973;
 }
 
 @media (prefers-color-scheme: light) {
