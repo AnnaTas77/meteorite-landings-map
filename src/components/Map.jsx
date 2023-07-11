@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const Map = ({ meteorites }) => {
     return (
-        <div className="leaflet-container">
+        <section className="leaflet-container">
             <MapContainer
                 center={[51.505, -0.09]} //coordinates to put Europe as a center
                 zoom={2}
@@ -44,7 +44,7 @@ const Map = ({ meteorites }) => {
                         </Marker>
                     ))}
             </MapContainer>
-        </div>
+        </section>
     );
 };
 

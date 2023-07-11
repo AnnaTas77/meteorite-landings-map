@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import getMeteoriteData from "../getMeteoriteData";
 import Header from "./components/Header";
 import MeteoritesList from "./components/MeteoritesList";
 import Map from "./components/Map";
@@ -10,10 +11,9 @@ function App() {
 
     useEffect(() => {
         setIsLoading(true);
-        axios
-            .get("https://data.nasa.gov/resource/gh4g-9sfh.json")
-            .then((response) => {
-                setMeteorites(response.data);
+        getMeteoriteData()
+            .then((data) => {
+                setMeteorites(data);
                 setIsLoading(false);
             })
             .catch((err) => {
@@ -24,8 +24,10 @@ function App() {
     return (
         <div className="app-container">
             <Header />
-            {isLoading ? <p>Loading...</p> : <Map meteorites={meteorites} />}
-            <MeteoritesList meteorites={meteorites} />
+            <main>
+                {isLoading ? <p className="loading">Loading...</p> : <Map meteorites={meteorites} />}
+                {!isLoading ? <MeteoritesList meteorites={meteorites} /> : ""}
+            </main>
         </div>
     );
 }

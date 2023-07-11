@@ -1,7 +1,11 @@
 import React from "react";
 
 function Header() {
-    return <h1>Meteorite Landings</h1>;
+    return (
+        <header>
+            <h1>Meteorite Landings</h1>
+        </header>
+    );
 }
 
 export default Header;
