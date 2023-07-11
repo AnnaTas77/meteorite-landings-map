@@ -14,9 +14,7 @@ html {
 }
 
 h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-    color: white;
+    color: #ffe7fa;
 }
 
 .app-container {
@@ -24,7 +22,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: linear-gradient(315deg, #c061cb 0%, #1c71d8 100%);
     background-repeat: no-repeat;
     background-size: cover;
@@ -35,11 +33,10 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
 
 .leaflet-container {
-    width: 50%;
+    width: 80%;
     min-height: 50vh;
     display: flex;
     justify-content: center;
@@ -64,7 +61,7 @@ main {
 }
 
 .loading {
-    color: white;
+    color: #ffe7fa;
     font-size: 20px;
     font-weight: bold;
     height: 100vh;
@@ -75,35 +72,43 @@ main {
     flex-direction: column;
     align-items: center;
     margin: 25px 0 45px;
-    width: 60%;
+    width: 80%;
 }
 
 .table-title {
-    color: white;
+    color: #ffe7fa;
 }
 
 .table-wrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
     height: 300px;
     overflow-y: auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 table {
     border: none;
-    padding: 5px;
-    background-color: #f9f9f94d;
+    background-color: #f9f9f961;
     margin-bottom: 50px;
-    border-radius: 5px;
 }
 
-thead {
+.headings-row {
     background-color: #ffe7fa;
     position: sticky;
     top: 0;
+    border: none;
+}
+
+.headings-row:hover {
+    background-color: #ffe7fa;
 }
 
 tbody {
+    border: none;
 }
 
 th,

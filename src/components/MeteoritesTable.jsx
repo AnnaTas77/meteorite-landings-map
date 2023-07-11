@@ -3,16 +3,16 @@ import React from "react";
 function MeteoritesTable({ meteorites }) {
     return (
         <section className="table-container">
-            <h2 className="table-title">Meteorite Landings Table</h2>
+            <h2 className="table-title"> All Known Meteorite Landings</h2>
             <div className="table-wrapper">
                 <table>
                     <thead>
-                        <tr>
+                        <tr className="headings-row">
                             <th>Name</th>
                             <th>Year discovered</th>
                             <th>Mass in grams</th>
                             <th>Classification</th>
-                            <th colSpan="2">Geo Location</th>
+                            <th colSpan="2">Geolocation</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -21,7 +21,12 @@ function MeteoritesTable({ meteorites }) {
                             const dateObj = new Date(dateStr);
                             const year = dateObj.getFullYear();
                             return (
-                                <tr key={meteorite.id}>
+                                <tr
+                                    key={meteorite.id}
+                                    onClick={() => {
+                                        console.log("Clicked!", meteorite.id);
+                                    }}
+                                >
                                     <td>{meteorite.name}</td>
                                     <td>{year}</td>
                                     <td>{meteorite.mass}</td>
