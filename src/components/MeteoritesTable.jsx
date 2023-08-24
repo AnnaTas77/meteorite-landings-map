@@ -57,11 +57,22 @@ function MeteoritesTable({ meteorites, setFlyToLocation }) {
             <div className="table-wrapper">
                 <table>
                     <thead>
-                        <tr className="headings-row">
-                            <th onClick={() => sortByTable("name")}>Name</th>
-                            <th onClick={() => sortByTable("yearNumber")}>Year discovered</th>
-                            <th onClick={() => sortByTable("mass")}>Mass in grams</th>
-                            <th>Classification</th>
+                        <tr className="headings-row text-lg">
+                            <th className="cursor-pointer hover:bg-fuchsia-200" onClick={() => sortByTable("name")}>
+                                Name
+                            </th>
+                            <th
+                                className="cursor-pointer hover:bg-fuchsia-200"
+                                onClick={() => sortByTable("yearNumber")}
+                            >
+                                Year discovered
+                            </th>
+                            <th className="cursor-pointer hover:bg-fuchsia-200" onClick={() => sortByTable("mass")}>
+                                Mass in grams
+                            </th>
+                            <th className="cursor-pointer hover:bg-fuchsia-200" onClick={() => sortByTable("recclass")}>
+                                Classification
+                            </th>
                             <th colSpan="2">Geolocation</th>
                         </tr>
                     </thead>
