@@ -1,6 +1,6 @@
 # Meteorite Landings Interactive Map
 
-![Screenshot of the meteorite landings visualization ](./src/assets/meteorite_landings_app1.png "Meteorite Landings Map")
+![Screenshot of the meteorite landings visualization ](./src/assets/meteorites-website-best.png "Meteorite Landings Map")
 
 This data visualization project showcases an interactive map of all known meteorite landings. The data is sourced from [NASA's Meteorite Landings API](https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh).
 
@@ -12,11 +12,10 @@ In addition to the map, all known landings are also displayed in a table. Users 
 
 ## Features
 
-- **Interactive Map:** Explore meteorite landing locations on an interactive map.
-- **Detailed Popup:** Click on map markers to view detailed information about individual meteorite landings.
-- **Sortable Table:** Easily sort data by name, year of discovery, and mass in grams in the table view.
-- **Loading Skeleton:** Enhance user experience with loading skeletons during data fetching.
-
+-   **Interactive Map:** Explore meteorite landing locations on an interactive map.
+-   **Detailed Popup:** Click on map markers to view detailed information about individual meteorite landings.
+-   **Sortable Table:** Easily sort data by name, year of discovery, and mass in grams in the table view.
+-   **Loading Skeleton:** Enhance user experience with loading skeletons during data fetching.
 
 ## Tech Stack
 
