@@ -4,6 +4,8 @@
 
 This data visualization project showcases an interactive map of all known meteorite landings. The data is sourced from [NASA's Meteorite Landings API](https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh).
 
+> Explore the live version [here](https://meteorite-landings-interactive-map.netlify.app/).
+
 ## Overview
 
 The map showcases pinpointed locations, accompanied by a table displaying comprehensive landing details. When the user clicks on a location marker on the map, a popup opens, providing detailed information for that specific meteorite landing, including name, year discovered, mass in grams, and classification.
