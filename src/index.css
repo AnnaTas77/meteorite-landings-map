@@ -27,9 +27,12 @@ html {
 }
 
 .main-title {
+    display: flex;
     color: #ffe7fa;
-    margin: 10px 0 50px 0;
+    margin: 12px 0 50px 0;
     text-align: center;
+    /* width: 90%; */
+    align-self: center;
 }
 
 .app-container {

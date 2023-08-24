@@ -2,8 +2,8 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 function Header() {
     return (
-        <header className="w-full">
-            <div className="flex items-center justify-end mt-4 lg:gap-7 md:gap-5 gap-3 text-white">
+        <header className="flex flex-col justify-center w-full ">
+            <div className="flex items-center justify-center md:justify-end mt-4 lg:gap-7 md:gap-5 gap-3 text-white">
                 <a
                     href="https://github.com/AnnaTas77"
                     target="_blank"
@@ -25,7 +25,7 @@ function Header() {
                     </div>
                 </a>
             </div>
-            <h1 className="main-title text-gradient font-bold text-2xl lg:text-3xl">
+            <h1 className="main-title text-center text-gradient font-bold text-2xl lg:text-3xl">
                 Meteorite Landings Data Visualization
             </h1>
         </header>
