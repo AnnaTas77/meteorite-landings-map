@@ -1,20 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body,
 html {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    background: linear-gradient(315deg, #c061cb 0%, #1c71d8 100%);
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 #root {
     margin: 0;
     padding: 0;
     display: flex;
-    text-align: center;
 }
 
-h1 {
+.text-gradient {
+    background: linear-gradient(to right, #42a6e3, #ff56f6);
+    color: transparent;
+    background-clip: text;
+}
+
+.main-title {
     color: #ffe7fa;
+    margin: 10px 0 50px 0;
+    text-align: center;
 }
 
 .app-container {
@@ -22,10 +37,6 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(315deg, #c061cb 0%, #1c71d8 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 main {
@@ -33,6 +44,7 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 1400px;
 }
 
 .leaflet-container {
@@ -64,8 +76,9 @@ main {
     color: #ffe7fa;
     font-size: 20px;
     font-weight: bold;
-    height: 100vh;
 }
+
+/* TABLE */
 
 .table-container {
     display: flex;
@@ -73,10 +86,13 @@ main {
     align-items: center;
     margin: 25px 0 45px;
     width: 80%;
+    text-align: center;
 }
 
 .table-title {
     color: #ffe7fa;
+    margin: 30px 0 20px 0;
+    text-align: center;
 }
 
 .table-wrapper {
@@ -93,7 +109,8 @@ main {
 table {
     border: none;
     background-color: #f9f9f961;
-    margin-bottom: 50px;
+    border-width: 0px;
+    border-spacing: 0;
 }
 
 .headings-row {
@@ -105,31 +122,60 @@ table {
 
 .headings-row:hover {
     background-color: #ffe7fa;
-}
-
-tbody {
-    border: none;
+    cursor: default;
 }
 
 th,
 td {
     border-bottom: 1px solid #ddd;
     padding: 8px;
+    vertical-align: middle;
+    padding-top: 14px;
 }
 
 tr:hover {
     background-color: #f9f9f973;
+    cursor: pointer;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
+/* FOOTER */
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    color: whitesmoke;
+}
+
+/* SKELETON TABLE */
+
+.skeleton-thead {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-width: 650px;
+}
+
+.skeleton-tr {
+    width: 93%;
+    display: flex;
+}
+
+.skeleton-th {
+    width: 200px;
+}
+
+.skeleton-tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 650px;
+}
+
+.skeleton-tbody-tr {
+    display: flex;
+    align-self: center;
+    width: 93%;
 }

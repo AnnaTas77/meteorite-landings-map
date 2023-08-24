@@ -1,10 +1,25 @@
-import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useRef, useEffect } from "react";
 
-const Map = ({ meteorites }) => {
+const MapComponent = ({ meteorites, flyToLocation }) => {
+    const mapRef = useRef(null);
+
+    useEffect(() => {
+        const showMarker = () => {
+            const map = mapRef.current;
+            if (!map) {
+                return;
+            }
+
+            map.flyTo([flyToLocation.latitude, flyToLocation.longitude], 13);
+        };
+        showMarker();
+    }, [flyToLocation]);
+
     return (
         <section className="leaflet-container">
             <MapContainer
+                ref={mapRef}
                 center={[51.505, -0.09]} //coordinates to put Europe as a center
                 zoom={2}
                 scrollWheelZoom={true}
@@ -48,4 +63,4 @@ const Map = ({ meteorites }) => {
     );
 };
 
-export default Map;
+export default MapComponent;

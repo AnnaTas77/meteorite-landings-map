@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import getMeteoriteData from "../getMeteoriteData";
 import Header from "./components/Header";
 import MeteoritesTable from "./components/MeteoritesTable";
-import Map from "./components/Map";
+import MapComponent from "./components/MapComponent";
+import Footer from "./components/Footer";
+import LoadingSkeleton from "./components/LoadingSkeleton";
+import "./index.css";
 
 function App() {
     const [meteorites, setMeteorites] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    const [flyToLocation, setFlyToLocation] = useState(null);
 
     useEffect(() => {
         setIsLoading(true);
@@ -23,10 +28,17 @@ function App() {
     return (
         <div className="app-container">
             <Header />
+
             <main>
-                {isLoading ? <p className="loading">Loading...</p> : <Map meteorites={meteorites} />}
-                {!isLoading ? <MeteoritesTable meteorites={meteorites} /> : ""}
+                {isLoading ? (
+                    <LoadingSkeleton />
+                ) : (
+                    <MapComponent meteorites={meteorites} flyToLocation={flyToLocation} />
+                )}
+                {!isLoading ? <MeteoritesTable meteorites={meteorites} setFlyToLocation={setFlyToLocation} /> : ""}
             </main>
+
+            <Footer />
         </div>
     );
 }
