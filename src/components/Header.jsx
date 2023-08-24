@@ -26,7 +26,7 @@ function Header() {
                 </a>
             </div>
             <h1 className="main-title text-center text-gradient font-bold text-2xl lg:text-3xl">
-                Meteorite Landings Data Visualization
+                Meteorite Landings Interactive Map
             </h1>
         </header>
     );

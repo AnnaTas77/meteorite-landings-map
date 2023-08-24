@@ -3,6 +3,7 @@ import { useState } from "react";
 function MeteoritesTable({ meteorites, setFlyToLocation }) {
     const filteredMeteorites = meteorites
         .filter((meteorite) => meteorite.geolocation)
+        .filter((meteorite) => meteorite.mass)
         .map((meteorite) => {
             let year;
             if (meteorite.year) {
@@ -13,6 +14,7 @@ function MeteoritesTable({ meteorites, setFlyToLocation }) {
                 year = "N/A";
             }
             meteorite.yearNumber = year;
+            meteorite.mass = Math.round(parseFloat(meteorite.mass).toFixed(2));
             return meteorite;
         });
 
@@ -20,10 +22,10 @@ function MeteoritesTable({ meteorites, setFlyToLocation }) {
     const [nameOrdering, setNameOrdering] = useState("asc");
 
     function sortByTable(columnName) {
-        let copy = [...meteoritesToShow];
+        let meteoritesToShowCopy = [...meteoritesToShow];
 
         if (nameOrdering === "asc") {
-            copy.sort((a, b) => {
+            meteoritesToShowCopy.sort((a, b) => {
                 if (a[columnName] < b[columnName]) {
                     return 1;
                 }
@@ -34,11 +36,11 @@ function MeteoritesTable({ meteorites, setFlyToLocation }) {
             });
             setNameOrdering("desc");
         } else {
-            copy.sort((a, b) => {
-                if (a.name < b.name) {
+            meteoritesToShowCopy.sort((a, b) => {
+                if (a[columnName] < b[columnName]) {
                     return -1;
                 }
-                if (a.name > b.name) {
+                if (a[columnName] > b[columnName]) {
                     return 1;
                 }
                 return 0;
@@ -46,7 +48,7 @@ function MeteoritesTable({ meteorites, setFlyToLocation }) {
             setNameOrdering("asc");
         }
 
-        setMeteoritesToShow(copy);
+        setMeteoritesToShow(meteoritesToShowCopy);
     }
 
     return (
